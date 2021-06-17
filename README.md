@@ -1,4 +1,4 @@
-# noted
+# SteakyNote
 
 A new Flutter project.
 
