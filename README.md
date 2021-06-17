@@ -35,9 +35,9 @@ note taking application should have.
 - delete notes
 - search for notes with the help of flutter search delegate
 ## Illustrations
-![]()
-![]()
-![]()
+![](https://github.com/pierreEdimo/SteakynoteApp/blob/master/image/steakynote.PNG)
+![](https://github.com/pierreEdimo/SteakynoteApp/blob/master/image/steakynote1.PNG)
+![](https://github.com/pierreEdimo/SteakynoteApp/blob/master/image/steakynote2.PNG)
 
 ## Setup
 this project has not been released yet. In order to test it, 
