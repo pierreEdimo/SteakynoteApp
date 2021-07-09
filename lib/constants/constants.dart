@@ -17,6 +17,21 @@ const MaterialColor primaryBlack = MaterialColor(
 );
 const int _blackPrimaryValue = 0xFF393e42;
 
+const MaterialColor lightGrey = MaterialColor(_greyLightValue, <int, Color>{
+  50: Color(0xffefefef),
+  100: Color(0xffefefef),
+  200: Color(0xffefefef),
+  300: Color(0xffefefef),
+  400: Color(0xffefefef),
+  500: Color(_greyLightValue),
+  600: Color(0xffefefef),
+  700: Color(0xffefefef),
+  800: Color(0xffefefef),
+  900: Color(0xffefefef),
+});
+
+const int _greyLightValue = 0xffefefef;
+
 final lightColors = [
   Colors.amber.shade300,
   Colors.lightGreen.shade300,
@@ -51,12 +66,10 @@ TextStyle titleStyle = TextStyle(
 TextStyle whiteTitleStyle = TextStyle(
   fontSize: 16.0,
   fontWeight: FontWeight.bold,
-  color: Colors.white,
 );
 
 TextStyle standardtextStyle = TextStyle(
   fontSize: 14.0,
-  color: Colors.white,
 );
 
 double getMinHeight(int index) {
