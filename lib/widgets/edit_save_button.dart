@@ -18,6 +18,8 @@ Widget editSaveButton(
       Provider.of<NoteService>(context, listen: false).editNote(editedNote);
 
       showSnack(context, "Edits saved");
+
+      Navigator.of(context).pop();
     },
     icon: Icon(
       Icons.save_outlined,

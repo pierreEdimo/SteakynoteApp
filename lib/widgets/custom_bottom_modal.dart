@@ -10,7 +10,6 @@ showCustomModal(BuildContext context, Widget child) {
         bottom: MediaQuery.of(context).viewInsets.bottom,
       ),
       child: Container(
-        color: Color(0xffb393e42),
         padding: EdgeInsets.all(10.0),
         child: SingleChildScrollView(child: child),
       ),

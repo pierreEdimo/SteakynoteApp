@@ -3,7 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:noted/constants/constants.dart';
 import 'package:noted/models/books.dart';
 import 'package:noted/models/steaky_notes.dart';
-import 'package:noted/screens/note_editing_screen.dart';
+import 'package:noted/screens/note_detail_screen.dart';
 import 'package:noted/services/note_service.dart';
 import 'package:noted/widgets/note_container.dart';
 import 'package:provider/provider.dart';
@@ -39,7 +39,7 @@ class ListOfNotes extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () => Navigator.of(context).pushNamed(
-                      EditNoteScreen.routeName,
+                      NoteDetailScreen.routeName,
                       arguments: notes[index],
                     ),
                     child: noteContainer(notes[index], index, context),

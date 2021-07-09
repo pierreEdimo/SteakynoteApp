@@ -3,12 +3,14 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:intl/intl.dart';
 import 'package:noted/constants/constants.dart';
 import 'package:noted/models/steaky_notes.dart';
+import 'package:noted/widgets/glass_container.dart';
 
 Widget noteContainer(SteakyNote note, int index, BuildContext context) {
   final minHeight = getMinHeight(index);
   final color = lightColors[note.key % lightColors.length];
-  return Card(
+  return GlassContainer(
     color: color,
+    height: minHeight,
     child: Container(
       padding: EdgeInsets.all(10.0),
       constraints: BoxConstraints(maxHeight: minHeight),

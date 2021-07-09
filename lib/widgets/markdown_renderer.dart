@@ -20,19 +20,6 @@ class MarkDownRender extends StatelessWidget {
           )
         : Markdown(
             padding: EdgeInsets.zero,
-            styleSheet: MarkdownStyleSheet(
-              h1: TextStyle(
-                fontSize: 22.0,
-                color: Colors.white,
-              ),
-              p: TextStyle(
-                color: Colors.white,
-                fontSize: 14.0,
-              ),
-              checkbox: TextStyle(
-                color: Colors.teal,
-              ),
-            ),
             data: text!,
           );
   }

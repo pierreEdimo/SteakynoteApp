@@ -50,14 +50,10 @@ class SearchScreen extends SearchDelegate<String> {
   ThemeData appBarTheme(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     return theme.copyWith(
-      primaryColor: Colors.white,
-      primaryIconTheme: theme.primaryIconTheme.copyWith(color: Colors.white),
-      primaryColorBrightness: Brightness.dark,
-      textTheme: theme.textTheme.copyWith(headline6: standardtextStyle),
-      appBarTheme:
-          theme.appBarTheme.copyWith(color: Color(0xffb393e42), elevation: 0),
-      inputDecorationTheme: theme.inputDecorationTheme
-          .copyWith(border: InputBorder.none, hintStyle: standardtextStyle),
+      appBarTheme: theme.appBarTheme.copyWith(elevation: 0),
+      inputDecorationTheme: theme.inputDecorationTheme.copyWith(
+        border: InputBorder.none,
+      ),
     );
   }
 
@@ -87,7 +83,9 @@ class SearchScreen extends SearchDelegate<String> {
                             .pushNamed(EditNoteScreen.routeName,
                                 arguments: note)
                             .then((_) => _fetchNotes()),
-                        child: noteContainer(note, note.key, context),
+                        child: Container(
+                            margin: EdgeInsets.only(bottom: 20.0),
+                            child: noteContainer(note, note.key, context)),
                       ))
                   .toList(),
             );

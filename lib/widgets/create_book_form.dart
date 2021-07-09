@@ -25,7 +25,6 @@ class CreateBookForm extends StatelessWidget {
               onPressed: () => Navigator.of(context).pop(),
               icon: Icon(
                 Icons.cancel_outlined,
-                color: Colors.white,
               ),
             ),
             IconButton(
@@ -49,7 +48,6 @@ class CreateBookForm extends StatelessWidget {
               },
               icon: Icon(
                 Icons.save_alt_outlined,
-                color: Colors.white,
               ),
             )
           ],

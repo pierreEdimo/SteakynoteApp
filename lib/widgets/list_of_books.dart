@@ -23,15 +23,15 @@ class ListOfbooks extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               )
-            : GridView.count(
-                crossAxisCount: 2,
-                mainAxisSpacing: 8,
-                crossAxisSpacing: 8,
+            : ListView(
                 children: books
                     .map(
-                      (Books book) => BooksContainer(
-                        books: book,
-                        id: book.key,
+                      (Books book) => Container(
+                        margin: EdgeInsets.only(bottom: 20.0),
+                        child: BooksContainer(
+                          books: book,
+                          id: book.key,
+                        ),
                       ),
                     )
                     .toList(),

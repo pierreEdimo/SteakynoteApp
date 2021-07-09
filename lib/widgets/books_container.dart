@@ -3,6 +3,7 @@ import 'package:noted/constants/constants.dart';
 import 'package:noted/models/books.dart';
 import 'package:intl/intl.dart';
 import 'package:noted/screens/books_detail_screen.dart';
+import 'package:noted/widgets/glass_container.dart';
 
 class BooksContainer extends StatefulWidget {
   final Books? books;
@@ -23,15 +24,18 @@ class _BooksContainerState extends State<BooksContainer> {
         BooksDetailScreen.routeName,
         arguments: widget.books,
       ),
-      child: Card(
+      child: GlassContainer(
+        height: 180,
         color: color,
         child: Container(
+          height: 180,
           child: Column(
             children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.menu_book_outlined),
+                  Icon(Icons.book_outlined),
+                  SizedBox(width: 10.0),
                   Flexible(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,11 +49,12 @@ class _BooksContainerState extends State<BooksContainer> {
                             fontFamily: 'OpenSans',
                           ),
                         ),
+                        SizedBox(height: 20.0),
                         widget.books!.description!.isEmpty
                             ? Text(
                                 "No description added",
                                 style: TextStyle(
-                                  fontSize: 12.0,
+                                  fontSize: 14.0,
                                 ),
                               )
                             : Text(
@@ -57,7 +62,7 @@ class _BooksContainerState extends State<BooksContainer> {
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 4,
                                 style: TextStyle(
-                                  fontSize: 12.0,
+                                  fontSize: 14.0,
                                 ),
                               ),
                       ],

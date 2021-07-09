@@ -27,6 +27,8 @@ Widget saveButton(TextEditingController controller, int id,
           controller.clear();
 
           showSnack(context, "Saved");
+
+          Navigator.of(context).pop();
         }
         DoNothingAction();
       },
