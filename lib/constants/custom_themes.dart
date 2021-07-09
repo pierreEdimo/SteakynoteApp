@@ -5,7 +5,7 @@ class CustomThemes {
   static final darkTheme = ThemeData(
       scaffoldBackgroundColor: Color(0xffb393e42),
       colorScheme: ColorScheme.dark(),
-      fontFamily: 'MontSerrat',
+      fontFamily: 'OpenSans',
       brightness: Brightness.dark,
       primaryColor: primaryBlack,
       textButtonTheme: TextButtonThemeData(
@@ -18,7 +18,7 @@ class CustomThemes {
     scaffoldBackgroundColor: Color(0xffefefef),
     primaryColor: lightGrey,
     colorScheme: ColorScheme.light(),
-    fontFamily: 'MontSerrat',
+    fontFamily: 'OpenSans',
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         primary: Colors.black,
