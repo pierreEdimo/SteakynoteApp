@@ -33,7 +33,6 @@ class NoteDetailScreen extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.delete_outlined,
-              color: Colors.white,
             ),
             onPressed: () {
               Provider.of<NoteService>(

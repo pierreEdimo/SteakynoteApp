@@ -12,7 +12,6 @@ Widget saveButton(TextEditingController controller, int id,
     child: IconButton(
       icon: Icon(
         Icons.save_outlined,
-        color: Colors.white,
       ),
       onPressed: () {
         if (controller.text.isNotEmpty) {

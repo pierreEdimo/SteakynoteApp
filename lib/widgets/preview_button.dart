@@ -14,7 +14,6 @@ Widget reviewButton(TextEditingController controller, BuildContext context) {
     },
     icon: Icon(
       Icons.remove_red_eye_outlined,
-      color: Colors.white,
     ),
   );
 }
