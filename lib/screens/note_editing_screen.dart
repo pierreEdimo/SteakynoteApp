@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:noted/models/steaky_notes.dart';
-import 'package:noted/services/note_service.dart';
 import 'package:noted/widgets/edit_save_button.dart';
 import 'package:noted/widgets/markdown_input.dart';
 import 'package:noted/widgets/preview_button.dart';
-import 'package:provider/provider.dart';
 
 class EditNoteScreen extends StatelessWidget {
   static const routeName = '/editScreen';
@@ -23,22 +21,6 @@ class EditNoteScreen extends StatelessWidget {
           icon: Icon(Icons.keyboard_arrow_left_outlined),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.delete_outlined,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              Provider.of<NoteService>(
-                context,
-                listen: false,
-              ).deleteNote(args);
-
-              Navigator.of(context).pop();
-            },
-          )
-        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
