@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:noted/constants/constants.dart';
+import 'package:noted/constants/custom_themes.dart';
 import 'package:noted/models/books.dart';
 import 'package:noted/models/steaky_notes.dart';
 import 'package:noted/screens/books_detail_screen.dart';
 import 'package:noted/screens/home_screen.dart';
 import 'package:noted/screens/note_adding_screen.dart';
+import 'package:noted/screens/note_detail_screen.dart';
 import 'package:noted/screens/note_editing_screen.dart';
 import 'package:noted/screens/preview_screen.dart';
 import 'package:noted/services/Editing_service.dart';
 import 'package:noted/services/book_service.dart';
 import 'package:noted/services/note_service.dart';
+import 'package:noted/services/theme_service.dart';
 import 'package:provider/provider.dart';
+
+final storage = FlutterSecureStorage();
 
 void main() async {
   await Hive.initFlutter();
@@ -36,32 +41,28 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => BookService()),
         ChangeNotifierProvider(create: (context) => EditingService()),
-        ChangeNotifierProvider(create: (context) => NoteService())
+        ChangeNotifierProvider(create: (context) => NoteService()),
+        ChangeNotifierProvider(create: (context) => ThemeService()),
       ],
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: primaryBlack,
-          scaffoldBackgroundColor: Color(
-            0xffb393e42,
-          ),
-          fontFamily: 'MontSerrat',
-          textButtonTheme: TextButtonThemeData(
-            style: TextButton.styleFrom(
-              primary: Colors.white, // This is a custom color variable
-            ),
-          ),
-        ),
-        initialRoute: '/',
-        routes: {
-          '/': (context) => HomeScreen(),
-          BooksDetailScreen.routeName: (context) => BooksDetailScreen(),
-          NoteEditor.routeName: (context) => NoteEditor(),
-          '/preview': (context) => PreviewScreen(),
-          EditNoteScreen.routeName: (context) => EditNoteScreen(),
-        },
-      ),
+      builder: (context, child) {
+        var themeService = Provider.of<ThemeService>(context);
+        return MaterialApp(
+          title: 'Flutter Demo',
+          debugShowCheckedModeBanner: false,
+          themeMode: themeService.getTheme(),
+          theme: CustomThemes.lightTheme,
+          darkTheme: CustomThemes.darkTheme,
+          initialRoute: '/',
+          routes: {
+            '/': (context) => HomeScreen(),
+            BooksDetailScreen.routeName: (context) => BooksDetailScreen(),
+            NoteEditor.routeName: (context) => NoteEditor(),
+            '/preview': (context) => PreviewScreen(),
+            EditNoteScreen.routeName: (context) => EditNoteScreen(),
+            NoteDetailScreen.routeName: (context) => NoteDetailScreen()
+          },
+        );
+      },
     );
   }
 }
